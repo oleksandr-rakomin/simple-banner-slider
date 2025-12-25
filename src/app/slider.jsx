@@ -3,10 +3,16 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-export function Slider({ sliderItemsList }) {
+export function Slider({
+  sliderItemsList = [],
+  sliderHeight = "h-150",
+  sizesImg = "800px",
+}) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
+    if (sliderItemsList.length < 2) return;
+
     const id = setTimeout(() => {
       setCurrentSlide((prevIdx) =>
         prevIdx === sliderItemsList.length - 1 ? 0 : prevIdx + 1
@@ -17,14 +23,18 @@ export function Slider({ sliderItemsList }) {
   }, [currentSlide, sliderItemsList.length]);
 
   return (
-    <div className="flex-1 relative h-150 bg-red-200 overflow-hidden">
+    <div
+      className={["flex-1 relative bg-red-300 overflow-hidden", sliderHeight]
+        .filter(Boolean)
+        .join(" ")}
+    >
       {sliderItemsList.map((item, idx) => (
         <Image
           key={item.id}
           src={item.src}
           alt={item.alt}
           fill
-          sizes="800px"
+          sizes={sizesImg}
           preload={idx <= 1}
           aria-hidden={idx !== currentSlide}
           className={[

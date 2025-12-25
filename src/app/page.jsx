@@ -14,9 +14,12 @@ const sliderItemsList = [
   { id: 4, alt: "Nidoqueen pokemon", src: nidoqueenPokemon },
 ];
 
+const sliderHeight = "h-150";
+const sizesImg = "800px";
+
 export default function Home() {
   return (
-    <div className="main-container flex gap-x-5 py-10">
+    <div className="main-container flex gap-x-5 py-10 bg-red-200">
       <p className="flex-1">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
         vestibulum magna dictum, convallis est vel, fermentum augue. Quisque
@@ -35,7 +38,11 @@ export default function Home() {
         Praesent tempor congue scelerisque. Phasellus ac blandit massa.
       </p>
 
-      <Slider sliderItemsList={sliderItemsList} />
+      <Slider
+        sliderItemsList={sliderItemsList}
+        sliderHeight={sliderHeight}
+        sizesImg={sizesImg}
+      />
     </div>
   );
 }
