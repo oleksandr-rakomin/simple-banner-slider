@@ -3,11 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-export function Slider({
-  sliderItemsList = [],
-  sliderHeight = "h-150",
-  sizesImg = "800px",
-}) {
+export function BannerSlider({ sliderItemsList = [] }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -24,9 +20,10 @@ export function Slider({
 
   return (
     <div
-      className={["flex-1 relative bg-red-300 overflow-hidden", sliderHeight]
-        .filter(Boolean)
-        .join(" ")}
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Banner slider"
+      className="flex-1 relative bg-red-300 overflow-hidden h-150"
     >
       {sliderItemsList.map((item, idx) => (
         <Image
@@ -34,9 +31,10 @@ export function Slider({
           src={item.src}
           alt={item.alt}
           fill
-          sizes={sizesImg}
+          sizes="800px"
           preload={idx <= 1}
           aria-hidden={idx !== currentSlide}
+          draggable={false}
           className={[
             "absolute inset-0 object-contain",
             idx === currentSlide

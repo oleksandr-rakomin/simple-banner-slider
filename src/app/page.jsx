@@ -1,4 +1,4 @@
-import { Slider } from "@/app/slider";
+import { BannerSlider } from "@/app/banner-slider";
 
 import {
   angryPikachuPokemon,
@@ -13,9 +13,6 @@ const sliderItemsList = [
   { id: 3, alt: "Meowth pokemon", src: meowthPokemon },
   { id: 4, alt: "Nidoqueen pokemon", src: nidoqueenPokemon },
 ];
-
-const sliderHeight = "h-150";
-const sizesImg = "800px";
 
 export default function Home() {
   return (
@@ -38,11 +35,7 @@ export default function Home() {
         Praesent tempor congue scelerisque. Phasellus ac blandit massa.
       </p>
 
-      <Slider
-        sliderItemsList={sliderItemsList}
-        sliderHeight={sliderHeight}
-        sizesImg={sizesImg}
-      />
+      <BannerSlider sliderItemsList={sliderItemsList} />
     </div>
   );
 }
