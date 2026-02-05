@@ -1,6 +1,6 @@
 # Simple banner slider
 
-### Low Complexity — ~8 hours
+## Low Complexity — ~8 hours
 
 - Auto-rotating banner slider
 - Single visible slide at a time
@@ -8,9 +8,7 @@
 - Fixed container height (layout stability)
 - Minimal configuration (items, height, sizes)
 
----
-
-### Medium Complexity — ~16 hours
+## Medium Complexity — ~16 hours
 
 - Dots / indicators
 - Basic controls (next / previous)
@@ -22,9 +20,7 @@
 - Accessibility-friendly visibility handling (`aria-hidden`)
 - Clean, reusable component API
 
----
-
-### High Complexity — ~24 hours
+## High Complexity — ~24 hours
 
 - Keyboard navigation
 - Reduced motion support (`prefers-reduced-motion`)
